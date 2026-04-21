@@ -14,7 +14,7 @@
     <!-- ********************************************************************* -->
     <!--  ЗДЕСЬ НАСТРАИВАЕТСЯ ТО, ЧТО ВИДНО В ПОИСКОВИКАХ И ВО ВКЛАДКЕ БРАУЗЕРА -->
     <!-- ********************************************************************* -->
-    <title>Свадьба Никиты и Дарьи</title>
+    <title> Приглашение на свадьбу Никиты и Дарьи</title>
     <meta name="description" content="Мы женимся! Приглашаем вас разделить с нами этот радостный день.">
     <meta name="author" content="Никита и Дарья">
     
@@ -22,7 +22,7 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Open Graph для соцсетей -->
-    <meta property="og:title" content="Свадьба Никиты и Дарьи">
+    <meta property="og:title" content="Приглашение на свадьбу Никиты и Дарьи">
     <meta property="og:description" content="Приглашаем вас разделить с нами этот радостный день.">
     <meta property="og:image" content="https://nikitashi0221-tech.github.io/img/hero-bg.jpg">
     <meta property="og:type" content="website">
@@ -85,17 +85,15 @@
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
-                            <!-- ========== ИЗМЕНИТЕ ПУНКТЫ МЕНЮ ========== -->
                             <li><a href="#intro">Наша история</a></li>
                             <li><a href="#events">Торжество</a></li>
                             <li><a href="#map">Как добраться</a></li>
                             <li><a href="#wishlist">Пожелания</a></li>
-                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Город</a></li>
-                            <!-- ======================================= -->
+                    
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#map" class="login">Место проведения</a></li>
-                            <li><a href="#rsvp" class="btn-white btn-small">Подтвердить</a></li>
+                            <li><a href="#rsvp" class="btn-white btn-small">Анкета гостя</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -110,10 +108,8 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
-                    <!-- ========== ГЛАВНЫЙ ЭКРАН ========== -->
                     <h1>Никита &amp; Дарья</h1>
                     <p class="hero-date">31 июля 2026</p>
-                    <!-- ================================= -->
                 </div>
             </div>
         </div>
@@ -150,13 +146,11 @@
         <div class="row">
             <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.jpg" class="wp1"></div>
             <div class="col-md-6">
-                <!-- ========== ИЗМЕНИТЕ ТЕКСТ ИСТОРИИ ========== -->
                 <p>
                     Здесь напишите вашу историю любви. Как вы познакомились, как развивались ваши отношения,
                     момент предложения и ваши чувства. Этот текст будет отображаться под фотографией.
                     Можете написать здесь всё, что хотите рассказать гостям.
                 </p>
-                <!-- ========================================= -->
             </div>
             <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.jpg" class="wp2"></div>
         </div>
@@ -215,9 +209,7 @@
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                     <h3 class="text-center section-padding">О дресс-коде</h3>
-                    <!-- ========== ИЗМЕНИТЕ ТЕКСТ ДРЕСС-КОДА ========== -->
                     <p>Мы будем рады видеть вас в нарядной одежде. Для женщин — платья или костюмы, для мужчин — костюмы или смокинги. Главное, чтобы вам было комфортно и радостно!</p>
-                    <!-- ============================================= -->
                 </div>
             </div>
         </div>
@@ -271,15 +263,15 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3 class="header">Пожелания и подарки</h3>
-                <p>Ваше присутствие — лучший подарок. Но если вы хотите порадовать нас, вот наши пожелания:</p>
+                <p>Наше главное пожелание - ваше присутствие!</p>
             </div>
         </div>
         <div class="row text-center">
             <div class="col-md-12">
                 <ul style="list-style: none; padding: 0;">
-                    <li>💰 Денежный конверт — на нашу мечту (путешествие)</li>
-                    <li>📚 Книги с пожеланиями внутри</li>
-                    <li>🍷 Бутылка хорошего вина в нашу коллекцию</li>
+                    <li>💰 Если вы не знаете, что подарить, будем благодарны за выбор подарка в конверте</li>
+                    <li>💐 Также нам было бы приятно получить один цветок от каждого гостя (пары) и собрать один оригинальный букет, который бы напоминал о каждом из вас</li>
+         
                 </ul>
                 <p>Будем рады любому знаку внимания! ❤️</p>
             </div>
@@ -307,49 +299,64 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h3>Подтвердите присутствие</h3>
+                <h3>Анкета гостя</h3>
                 <p>Пожалуйста, ответьте до <strong>1 июля 2026</strong></p>
                 <form id="rsvp-form" class="rsvp-form" action="" method="POST">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input type="text" name="name" class="" placeholder="Ваше имя *" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class="" placeholder="Ваш email *" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0" max="10" placeholder="Сколько вас человек?" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="text" name="invite_code" id="invite_code" class="" placeholder="Код приглашения (если есть)">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ========== ДОБАВЛЕНО НОВОЕ ПОЛЕ С НАПИТКОМ ========== -->
+                    <!-- Поле: ИМЯ -->
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="form-input-group">
-                                <i class="fa fa-glass"></i>
-                                <select name="drink" class="" style="width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #ccc;">
-                                    <option value="" disabled selected>Выберите предпочитаемый напиток</option>
-                                    <option value="wine">Вино</option>
-                                    <option value="champagne">Шампанское</option>
-                                    <option value="juice">Сок</option>
-                                    <option value="water">Вода</option>
-                                </select>
+                                <i class="fa fa-user"></i>
+                                <input type="text" name="name" class="" placeholder="Ваше имя *" required>
                             </div>
                         </div>
                     </div>
-                    <!-- =================================================== -->
+                    
+                    <!-- Поле: КОЛИЧЕСТВО ГОСТЕЙ -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i>
+                                <input type="number" name="extras" class="" min="1" max="10" placeholder="Сколько вас человек? (включая вас) *" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ========== НОВОЕ ПОЛЕ: ВЫБОР НАПИТКОВ (ЧЕКБОКСЫ) ========== -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-input-group" style="text-align: left;">
+                                <i class="fa fa-glass"></i>
+                                <p style="margin: 10px 0 5px 0; font-weight: bold;">Предпочтения по напиткам (можно выбрать несколько):</p>
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 5px 0;">
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                        <input type="checkbox" name="drink" value="Шампанское"> Шампанское
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                        <input type="checkbox" name="drink" value="Вино красное"> Вино красное
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                        <input type="checkbox" name="drink" value="Вино белое"> Вино белое
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                        <input type="checkbox" name="drink" value="Коньяк"> Коньяк
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                        <input type="checkbox" name="drink" value="Виски"> Виски
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                        <input type="checkbox" name="drink" value="Водка"> Водка
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                        <input type="checkbox" name="drink" value="Безалкогольные напитки"> Безалкогольные напитки
+                                    </label>
+                                </div>
+                                <small style="color: #888; display: block; margin-top: 5px;">Вы можете отметить несколько вариантов</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================ -->
+                    
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
@@ -373,7 +380,7 @@
     </div>
 </footer>
 
-<!-- ========== ПОДКЛЮЧЕНИЕ СКРИПТОВ (НЕ ТРОГАТЬ) ========== -->
+<!-- ========== ПОДКЛЮЧЕНИЕ СКРИПТОВ ========== -->
 <script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
