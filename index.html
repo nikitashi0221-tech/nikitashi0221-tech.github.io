@@ -421,7 +421,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <h3>Анкета гостя</h3>
                 <p>Пожалуйста, ответьте до <strong>15 июня 2026</strong></p>
-                <form id="rsvp-form" class="rsvp-form" action="https://script.google.com/macros/s/AKfycbz7GDY4lhlDXbje4ek9kfxacMZHOzNaToOhJhARtBcBYGQXPVDAzwUUFJh3vESqj-Rm/exec" method="POST">
+                <form id="rsvp-form" method="POST">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="form-input-group">
@@ -458,7 +458,7 @@
                         </div>
                     </div>
                     
-                    <!-- ========== НОВЫЙ БЛОК: ВТОРОЙ ДЕНЬ ТОРЖЕСТВА ========== -->
+                    <!-- Блок: ВТОРОЙ ДЕНЬ ТОРЖЕСТВА -->
                     <div class="second-day-card">
                         <div style="text-align: center;">
                             <i class="fa fa-calendar" style="font-size: 28px; color: #c6a56c;"></i>
@@ -475,7 +475,6 @@
                         </div>
                         <p style="color: #999; font-size: 12px; text-align: center; margin-top: 15px;">Выберите один из вариантов</p>
                     </div>
-                    <!-- =================================================== -->
                     
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
@@ -511,29 +510,74 @@
 <script src="js/scripts.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
 
-<!-- ========== СКРИПТ ДЛЯ СОХРАНЕНИЯ ДАННЫХ ========== -->
+<!-- ========== НОВЫЙ СКРИПТ ДЛЯ ОТПРАВКИ ФОРМЫ ========== -->
 <script>
     (function() {
-        var form = document.getElementById('rsvp-form');
+        // ВАШ URL СКРИПТА ИЗ GOOGLE APPS SCRIPT
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7GDY4lhlDXbje4ek9kfxacMZHOzNaToOhJhARtBcBYGQXPVDAzwUUFJh3vESqj-Rm/exec';
+        
+        const form = document.getElementById('rsvp-form');
         if (!form) return;
         
-        form.addEventListener('submit', function(e) {
-            // Собираем выбранные напитки
-            var checkboxes = document.querySelectorAll('.drinks-card input[type="checkbox"]:checked');
-            var selectedDrinks = [];
-            checkboxes.forEach(function(checkbox) {
-                selectedDrinks.push(checkbox.value);
-            });
-            if (selectedDrinks.length > 0) {
-                var drinksInput = document.createElement('input');
-                drinksInput.type = 'hidden';
-                drinksInput.name = 'drinks';
-                drinksInput.value = selectedDrinks.join(', ');
-                form.appendChild(drinksInput);
-            }
+        // Отключаем стандартную отправку формы
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             
-            // Выбранный вариант второго дня уже передаётся через радиокнопку с name="second_day"
-            // Ничего дополнительно делать не нужно
+            // Показываем сообщение "Отправка..."
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Отправка...';
+            submitBtn.disabled = true;
+            
+            // Собираем выбранные напитки
+            const drinkCheckboxes = document.querySelectorAll('.drinks-card input[type="checkbox"]:checked');
+            const selectedDrinks = Array.from(drinkCheckboxes).map(cb => cb.value).join(', ');
+            
+            // Получаем выбранный вариант второго дня
+            const secondDayRadio = document.querySelector('input[name="second_day"]:checked');
+            const secondDay = secondDayRadio ? secondDayRadio.value : '';
+            
+            // Получаем значения полей
+            const name = form.querySelector('input[name="name"]').value;
+            const extras = form.querySelector('input[name="extras"]').value;
+            
+            // Формируем данные для отправки
+            const formData = new URLSearchParams();
+            formData.append('name', name);
+            formData.append('extras', extras);
+            formData.append('drinks', selectedDrinks);
+            formData.append('second_day', secondDay);
+            
+            try {
+                // Отправляем данные на Google Apps Script
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: formData.toString()
+                });
+                
+                // Показываем модальное окно с благодарностью
+                $('#rsvp-modal').modal('show');
+                
+                // Очищаем форму
+                form.reset();
+                
+                // Убираем все добавленные скрытые поля (если были)
+                const hiddenInputs = form.querySelectorAll('input[type="hidden"]');
+                hiddenInputs.forEach(input => input.remove());
+                
+            } catch (error) {
+                console.error('Ошибка отправки:', error);
+                alert('Произошла ошибка. Пожалуйста, попробуйте ещё раз или свяжитесь с нами напрямую.');
+            } finally {
+                // Возвращаем кнопку в исходное состояние
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     })();
 </script>
