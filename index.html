@@ -69,6 +69,29 @@
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<style>
+    /* Скрываем лишние элементы, которые могут появляться вверху страницы */
+    .share-bar {
+        display: none;
+    }
+    
+    /* Исправляем возможные проблемы с отображением иконок */
+    .hero-content img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Убираем лишние отступы в начале страницы */
+    .hero {
+        padding-top: 0;
+    }
+    
+    /* Исправляем возможное дублирование кнопок */
+    .hero-content .btn,
+    .hero-content .btn-fill {
+        display: inline-block;
+    }
+</style>
 </head>
 
 <body id="top">
@@ -115,7 +138,7 @@
         </div>
         <div class="row">
             <div class="col-sm-4 hidden-xs"></div>
-            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp" class="btn btn-accent btn-large rsvp-btn">Подтвердить присутствие</a></div>
+            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp" class="btn btn-accent btn-large rsvp-btn">Анкета гостя</a></div>
             <div class="col-sm-4 hidden-xs"></div>
         </div>
     </div>
@@ -322,40 +345,42 @@
                         </div>
                     </div>
                     
-                    <!-- ========== НОВОЕ ПОЛЕ: ВЫБОР НАПИТКОВ (ЧЕКБОКСЫ) ========== -->
+                    <!-- ========== ВЫБОР НАПИТКОВ (СТИЛИЗОВАННЫЙ) ========== -->
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
-                            <div class="form-input-group" style="text-align: left;">
-                                <i class="fa fa-glass"></i>
-                                <p style="margin: 10px 0 5px 0; font-weight: bold;">Предпочтения по напиткам (можно выбрать несколько):</p>
-                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 5px 0;">
-                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                        <input type="checkbox" name="drink" value="Шампанское"> Шампанское
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                        <input type="checkbox" name="drink" value="Вино красное"> Вино красное
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                        <input type="checkbox" name="drink" value="Вино белое"> Вино белое
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                        <input type="checkbox" name="drink" value="Коньяк"> Коньяк
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                        <input type="checkbox" name="drink" value="Виски"> Виски
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                        <input type="checkbox" name="drink" value="Водка"> Водка
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                        <input type="checkbox" name="drink" value="Безалкогольные напитки"> Безалкогольные напитки
-                                    </label>
+                            <div class="form-input-group" style="text-align: left; padding: 15px 20px;">
+                                <i class="fa fa-glass" style="position: absolute; left: 30px; top: 20px;"></i>
+                                <div style="margin-left: 25px;">
+                                    <p style="margin: 0 0 12px 0; font-weight: bold; color: #444;">Предпочтения по напиткам (можно выбрать несколько):</p>
+                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0;">
+                                            <input type="checkbox" name="drink" value="Шампанское" style="width: auto; margin: 0;"> Шампанское
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0;">
+                                            <input type="checkbox" name="drink" value="Вино красное" style="width: auto; margin: 0;"> Вино красное
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0;">
+                                            <input type="checkbox" name="drink" value="Вино белое" style="width: auto; margin: 0;"> Вино белое
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0;">
+                                            <input type="checkbox" name="drink" value="Коньяк" style="width: auto; margin: 0;"> Коньяк
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0;">
+                                            <input type="checkbox" name="drink" value="Виски" style="width: auto; margin: 0;"> Виски
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0;">
+                                            <input type="checkbox" name="drink" value="Водка" style="width: auto; margin: 0;"> Водка
+                                        </label>
+                                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0;">
+                                            <input type="checkbox" name="drink" value="Безалкогольные напитки" style="width: auto; margin: 0;"> Безалкогольные напитки
+                                        </label>
+                                    </div>
+                                    <small style="color: #999; display: block; margin-top: 10px; font-size: 12px;">Вы можете отметить несколько вариантов</small>
                                 </div>
-                                <small style="color: #888; display: block; margin-top: 5px;">Вы можете отметить несколько вариантов</small>
                             </div>
                         </div>
                     </div>
-                    <!-- ============================================================ -->
+                    <!-- ===================================================== -->
                     
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
@@ -366,7 +391,6 @@
         </div>
     </div>
 </section>
-
 <!-- ========== ПОДВАЛ ========== -->
 <footer>
     <div class="container">
