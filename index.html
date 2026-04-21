@@ -61,13 +61,9 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     
     <style>
-        /* Скрываем лишние элементы, которые вызывают иконки с ошибками */
-        .share-bar,
-        .down-arrow.floating-arrow,
-        .hero-arrow,
-        .navigation .navicon,
-        .header-nav .member-actions .login {
-            display: none !important;
+        /* Скрываем только те элементы, которые точно не нужны */
+        .share-bar {
+            display: none;
         }
         
         /* Исправляем отображение формы */
@@ -114,7 +110,8 @@
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-top: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #eee;
         }
         
         .drinks-card h4 {
@@ -144,6 +141,36 @@
             height: 18px;
             margin: 0;
             cursor: pointer;
+        }
+        
+        /* Убеждаемся, что навигация и кнопки видны на мобильных */
+        .navigation .navicon {
+            display: block !important;
+        }
+        
+        .header-nav .member-actions .login {
+            display: inline-block !important;
+        }
+        
+        .btn-white.btn-small {
+            display: inline-block !important;
+        }
+        
+        .hero-content h1 {
+            font-size: 36px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            .hero-date {
+                font-size: 18px;
+            }
+            .drinks-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -389,8 +416,8 @@
                         </div>
                     </div>
                     
-                    <!-- Блок с напитками (внутри формы) -->
-                    <div class="drinks-card" style="margin-bottom: 25px;">
+                    <!-- Блок с напитками -->
+                    <div class="drinks-card">
                         <div style="text-align: center;">
                             <i class="fa fa-glass" style="font-size: 28px; color: #c6a56c;"></i>
                             <h4 style="margin: 10px 0 5px;">Предпочтения по напиткам</h4>
@@ -448,7 +475,6 @@
         if (!form) return;
         
         form.addEventListener('submit', function(e) {
-            // Собираем все отмеченные чекбоксы с напитками
             var checkboxes = document.querySelectorAll('.drinks-card input[type="checkbox"]:checked');
             var selectedDrinks = [];
             
@@ -456,7 +482,6 @@
                 selectedDrinks.push(checkbox.value);
             });
             
-            // Создаём скрытое поле, если есть выбранные напитки
             if (selectedDrinks.length > 0) {
                 var hiddenInput = document.createElement('input');
                 hiddenInput.type = 'hidden';
