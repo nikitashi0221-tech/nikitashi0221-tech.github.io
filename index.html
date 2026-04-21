@@ -422,55 +422,49 @@
                 <h3>Анкета гостя</h3>
                 <p>Пожалуйста, ответьте до <strong>15 июня 2026</strong></p>
                 <form id="rsvp-form" method="POST">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i>
-                                <input type="text" name="name" placeholder="Ваше имя *" required>
-                            </div>
-                        </div>
+                    <!-- Поле: ИМЯ -->
+                    <div class="form-input-group" style="margin-bottom: 20px; text-align: left;">
+                        <i class="fa fa-user" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #c6a56c; z-index: 1;"></i>
+                        <input type="text" name="name" placeholder="Ваше имя *" required style="width: 100%; padding: 14px 15px 14px 45px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
                     </div>
                     
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i>
-                                <input type="number" name="extras" min="1" max="10" placeholder="Сколько вас человек? (включая вас) *" required>
-                            </div>
-                        </div>
+                    <!-- Поле: КОЛИЧЕСТВО ГОСТЕЙ -->
+                    <div class="form-input-group" style="margin-bottom: 20px; text-align: left;">
+                        <i class="fa fa-users" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #c6a56c; z-index: 1;"></i>
+                        <input type="number" name="extras" min="1" max="10" placeholder="Сколько вас человек? (включая вас) *" required style="width: 100%; padding: 14px 15px 14px 45px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
                     </div>
                     
                     <!-- Блок с напитками -->
-                    <div class="drinks-card">
+                    <div class="drinks-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 25px; border: 1px solid #eee;">
                         <div style="text-align: center;">
                             <i class="fa fa-glass" style="font-size: 28px; color: #c6a56c;"></i>
                             <h4 style="margin: 10px 0 5px;">Предпочтения по напиткам</h4>
                             <p style="color: #666; font-size: 14px;">Вы можете выбрать несколько вариантов</p>
                         </div>
-                        <div class="drinks-grid">
-                            <label><input type="checkbox" name="drink" value="Шампанское"> Шампанское</label>
-                            <label><input type="checkbox" name="drink" value="Вино красное"> Вино красное</label>
-                            <label><input type="checkbox" name="drink" value="Вино белое"> Вино белое</label>
-                            <label><input type="checkbox" name="drink" value="Коньяк"> Коньяк</label>
-                            <label><input type="checkbox" name="drink" value="Виски"> Виски</label>
-                            <label><input type="checkbox" name="drink" value="Водка"> Водка</label>
-                            <label><input type="checkbox" name="drink" value="Безалкогольные напитки"> Безалкогольные напитки</label>
+                        <div class="drinks-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 15px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0; color: #555;"><input type="checkbox" name="drink" value="Шампанское" style="width: 18px; height: 18px; margin: 0;"> Шампанское</label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0; color: #555;"><input type="checkbox" name="drink" value="Вино красное" style="width: 18px; height: 18px; margin: 0;"> Вино красное</label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0; color: #555;"><input type="checkbox" name="drink" value="Вино белое" style="width: 18px; height: 18px; margin: 0;"> Вино белое</label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0; color: #555;"><input type="checkbox" name="drink" value="Коньяк" style="width: 18px; height: 18px; margin: 0;"> Коньяк</label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0; color: #555;"><input type="checkbox" name="drink" value="Виски" style="width: 18px; height: 18px; margin: 0;"> Виски</label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0; color: #555;"><input type="checkbox" name="drink" value="Водка" style="width: 18px; height: 18px; margin: 0;"> Водка</label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; margin: 0; color: #555;"><input type="checkbox" name="drink" value="Безалкогольные напитки" style="width: 18px; height: 18px; margin: 0;"> Безалкогольные напитки</label>
                         </div>
                     </div>
                     
                     <!-- Блок: ВТОРОЙ ДЕНЬ ТОРЖЕСТВА -->
-                    <div class="second-day-card">
+                    <div class="second-day-card" style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 25px; border: 1px solid #eee;">
                         <div style="text-align: center;">
                             <i class="fa fa-calendar" style="font-size: 28px; color: #c6a56c;"></i>
                             <h4 style="margin: 10px 0 5px;">Второй день торжества</h4>
                             <p style="color: #666; font-size: 14px;">1 августа 2026 года (продолжение праздника)</p>
                         </div>
-                        <div class="second-day-options">
-                            <label>
-                                <input type="radio" name="second_day" value="Да"> Да, останусь/приеду
+                        <div class="second-day-options" style="display: flex; gap: 30px; margin-top: 15px; justify-content: center;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0; color: #555; font-size: 16px;">
+                                <input type="radio" name="second_day" value="Да" style="width: 18px; height: 18px; margin: 0;"> Да, останусь/приеду
                             </label>
-                            <label>
-                                <input type="radio" name="second_day" value="Нет"> Нет, не смогу
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; margin: 0; color: #555; font-size: 16px;">
+                                <input type="radio" name="second_day" value="Нет" style="width: 18px; height: 18px; margin: 0;"> Нет, не смогу
                             </label>
                         </div>
                         <p style="color: #999; font-size: 12px; text-align: center; margin-top: 15px;">Выберите один из вариантов</p>
@@ -479,13 +473,12 @@
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
-                    <button type="submit" class="btn-fill rsvp-btn">Подтвердить</button>
+                    <button type="submit" class="btn-fill rsvp-btn" style="background: #c6a56c; color: white; border: none; padding: 14px 35px; border-radius: 40px; font-size: 16px; cursor: pointer; transition: 0.3s;">Подтвердить</button>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
 <!-- ========== ПОДВАЛ ========== -->
 <footer>
     <div class="container">
