@@ -1,284 +1,397 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="ru"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- ********************************************************************* -->
-  <!--  ЗДЕСЬ НАСТРАИВАЕТСЯ ТО, ЧТО ВИДНО В ПОИСКОВИКАХ И ВО ВКЛАДКЕ БРАУЗЕРА -->
-  <!-- ********************************************************************* -->
-  <title>Свадьба Никита и Дарья</title> <!-- ← ЗАМЕНИТЕ на ваши имена -->
-  <meta name="description" content="Мы женимся! Приглашаем вас разделить с нами этот радостный день."> <!-- ← Описание сайта для поисковиков -->
-  <meta name="author" content="Никита и Дарья">
-  <!-- Иконка на вкладке браузера (замените favicon.ico в корневой папке) -->
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <!-- Подключение стилей (не трогать) -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/your-style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <!-- ********************************************************************* -->
+    <!--  ЗДЕСЬ НАСТРАИВАЕТСЯ ТО, ЧТО ВИДНО В ПОИСКОВИКАХ И ВО ВКЛАДКЕ БРАУЗЕРА -->
+    <!-- ********************************************************************* -->
+    <title>Свадьба Никиты и Дарьи</title>
+    <meta name="description" content="Мы женимся! Приглашаем вас разделить с нами этот радостный день.">
+    <meta name="author" content="Никита и Дарья">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Свадьба Никиты и Дарьи">
+    <meta property="og:description" content="Приглашаем вас разделить с нами этот радостный день.">
+    <meta property="og:image" content="https://nikitashi0221-tech.github.io/img/hero-bg.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Иконки -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+
+            // add link tag to head section
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+
+        // load js files from CDN if local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
-<body>
-  <!-- ****************************** -->
-  <!--  ГЛАВНЫЙ ЭКРАН (HERO / ЗАСТАВКА) -->
-  <!-- ****************************** -->
-  <header id="hero">
-    <div class="hero-container">
-      <div class="hero-content clearfix">
-        <!-- ========== ИЗМЕНИТЕ ЭТИ ТЕКСТЫ ========== -->
-        <h1 class="hero-title">Никита &amp; Дарья</h1> <!-- ← ВАШИ ИМЕНА (замените оба) -->
-        <p class="hero-date">31 июля 2026</p> <!-- ← ДАТА (например, 15 июня 2026) -->
-        <!-- ========================================= -->
-        <div class="hero-arrow">
-          <a href="#couple" class="scrollto"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
-  </header>
+<body id="top">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <!-- ************************************* -->
-  <!--  БЛОК С ПРИВЕТСТВИЕМ И ФОТО ЖЕНИХА/НЕВЕСТЫ -->
-  <!-- ************************************* -->
-  <section id="couple">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title">
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <h2>Дорогие гости!</h2> <!-- ← ЗАГОЛОВОК ПРИВЕТСТВИЯ -->
-            <!-- ================================= -->
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-md-push-4">
-          <div class="couple-single">
-            <!-- ФОТОГРАФИИ: замените файлы в папке img/ -->
-            <div class="couple-img"><img src="img/hero-bg.jpg" alt="Жених и Невеста" class="img-circle"></div>
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <div class="couple-name">
-              <h3>Никита</h3> <!-- ← ИМЯ ЖЕНИХА -->
-              <h4>Дарья</h4> <!-- ← ИМЯ НЕВЕСТЫ -->
-            </div>
-            <!-- ================================= -->
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="story">
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <p>Здесь напишите вашу историю любви. Как вы познакомились, как развивались ваши отношения, момент предложения и ваши чувства.</p>
-            <p>Этот текст будет отображаться под фотографией. Можете написать здесь всё, что хотите рассказать гостям.</p>
-            <!-- ================================= -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ******************************* -->
-  <!--  БЛОК С ДАТОЙ И МЕСТОМ ПРОВЕДЕНИЯ -->
-  <!-- ******************************* -->
-  <section id="event">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title">
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <h2>Торжество состоится</h2> <!-- ← ЗАГОЛОВОК -->
-            <!-- ================================= -->
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- КАРТОЧКА ДАТЫ -->
-        <div class="col-md-4">
-          <div class="event-single">
-            <i class="fa fa-calendar"></i>
-            <h4>Дата</h4>
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <span>31 ИЮЛЯ 2026</span> <!-- ← ДАТА СВАДЬБЫ -->
-            <p>Пятница, начало в 16:00</p> <!-- ← ВРЕМЯ НАЧАЛА -->
-            <!-- ================================= -->
-          </div>
-        </div>
-        <!-- КАРТОЧКА МЕСТА -->
-        <div class="col-md-4">
-          <div class="event-single">
-            <i class="fa fa-map-marker"></i>
-            <h4>Место проведения</h4>
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <span>ГК "ГУЛЛИВЕР"</span> <!-- ← НАЗВАНИЕ -->
-            <p>АДРЕС: Пермь, ул. Брызгалова 16</p> <!-- ← ПОЛНЫЙ АДРЕС -->
-            <p>Как добраться: ...</p> <!-- ← ОПИСАНИЕ ПРОЕЗДА -->
-            <!-- ================================= -->
-          </div>
-        </div>
-        <!-- КАРТОЧКА ДРЕСС-КОДА -->
-        <div class="col-md-4">
-          <div class="event-single">
-            <i class="fa fa-suitcase"></i>
-            <h4>Дресс-код</h4>
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <p>Пожелания по одежде, если есть</p>
-            <!-- ================================= -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ********************** -->
-  <!--  БЛОК С КАРТОЙ (GOOGLE MAPS) -->
-  <!-- ********************** -->
-  <section id="google-map">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title">
-            <h2>Как нас найти</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <!-- ⚠️ ВАЖНО: замените src на вашу ссылку с Google Карт -->
-          <!-- Как получить: откройте Google Карты → найдите место → нажмите "Поделиться" → "Встроить карту" → скопируйте src="..." -->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2111.666747066907!2d56.3773990770284!3d58.044267974017664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTjCsDAyJzM5LjQiTiA1NsKwMjInNDcuOSJF!5e0!3m2!1sru!2sru!4v1776761831566!5m2!1sru!2sru" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ************************ -->
-  <!--  БЛОК RSVP (ФОРМА ПОДТВЕРЖДЕНИЯ) -->
-  <!-- ************************ -->
-  <section id="rsvp">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title">
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <h2>Подтвердите присутствие</h2>
-            <p>Пожалуйста, ответьте до 1 июля 2026</p>
-            <!-- ================================= -->
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <form id="rsvp-form" class="rsvp-form" action="" method="POST">
-            <div class="row">
-              <!-- ПОЛЕ: ИМЯ -->
-              <div class="col-md-6">
-                <div class="form-input-group">
-                  <i class="fa fa-user"></i>
-                  <input type="text" name="name" class="form-control" placeholder="Ваше имя *" required>
+<section class="hero">
+    <section class="navigation">
+        <header>
+            <div class="header-content">
+                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
+                <div class="header-nav">
+                    <nav>
+                        <ul class="primary-nav">
+                            <!-- ========== ИЗМЕНИТЕ ПУНКТЫ МЕНЮ ========== -->
+                            <li><a href="#intro">Наша история</a></li>
+                            <li><a href="#events">Торжество</a></li>
+                            <li><a href="#map">Как добраться</a></li>
+                            <li><a href="#wishlist">Пожелания</a></li>
+                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Город</a></li>
+                            <!-- ======================================= -->
+                        </ul>
+                        <ul class="member-actions">
+                            <li><a href="#map" class="login">Место проведения</a></li>
+                            <li><a href="#rsvp" class="btn-white btn-small">Подтвердить</a></li>
+                        </ul>
+                    </nav>
                 </div>
-              </div>
-              <!-- ПОЛЕ: EMAIL -->
-              <div class="col-md-6">
-                <div class="form-input-group">
-                  <i class="fa fa-envelope"></i>
-                  <input type="email" name="email" class="form-control" placeholder="Ваш email *" required>
+                <div class="navicon">
+                    <a class="nav-toggle" href="#"><span></span></a>
                 </div>
-              </div>
             </div>
-            <div class="row">
-              <!-- ПОЛЕ: КОЛИЧЕСТВО ГОСТЕЙ -->
-              <div class="col-md-12">
-                <div class="form-input-group">
-                  <i class="fa fa-users"></i>
-                  <input type="text" name="extras" class="form-control" placeholder="Сколько вас человек?">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-input-group">
-                  <i class="fa fa-key"></i>
-                  <input type="text" name="invite_code" class="form-control" placeholder="Код приглашения (если есть)">
-                </div>
-              </div>
-            </div>
-            <!-- ⚠️ ЕСЛИ ХОТИТЕ ДОБАВИТЬ НОВОЕ ПОЛЕ (например, выбор напитка) -->
-            <!-- РАСКОММЕНТИРУЙТЕ ЭТОТ БЛОК И ЗАПОЛНИТЕ -->
-            
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-input-group">
-                  <i class="fa fa-glass"></i>
-                  <select name="drink" class="form-control">
-                    <option value="" disabled selected>Выберите напиток</option>
-                    <option value="wine">Вино</option>
-                    <option value="champagne">Шампанское</option>
-                    <option value="juice">Сок</option>
-                    <option value="water">Вода</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            
-            <button class="btn-fill rsvp-btn">Отправить</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ************************ -->
-  <!--  БЛОК С ПОДАРКАМИ (WISHLIST) -->
-  <!-- ************************ -->
-  <section id="wishlist">
+        </header>
+    </section>
+    
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title">
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <h2>Пожелания и подарки</h2>
-            <p>Ваше присутствие — лучший подарок. Но если вы хотите порадовать нас, вот наши пожелания:</p>
-            <!-- ================================= -->
-          </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="hero-content text-center">
+                    <!-- ========== ГЛАВНЫЙ ЭКРАН ========== -->
+                    <h1>Никита &amp; Дарья</h1>
+                    <p class="hero-date">31 июля 2026</p>
+                    <!-- ================================= -->
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="wishlist-content">
-            <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-            <ul>
-              <li>💰 Денежный конверт — на мечту (например, путешествие)</li>
-              <li>📚 Книги с пожеланиями внутри</li>
-              <li>🍷 Бутылка хорошего вина в нашу коллекцию</li>
-            </ul>
-            <p>Будем рады любому знаку внимания! ❤️</p>
-            <!-- ================================= -->
-          </div>
+        <div class="row">
+            <div class="col-sm-4 hidden-xs"></div>
+            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp" class="btn btn-accent btn-large rsvp-btn">Подтвердить присутствие</a></div>
+            <div class="col-sm-4 hidden-xs"></div>
         </div>
-      </div>
     </div>
-  </section>
+    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+</section>
 
-  <!-- ************************ -->
-  <!--  ПОДВАЛ САЙТА (FOOTER) -->
-  <!-- ************************ -->
-  <footer id="footer">
+<!-- ========== БЛОК-ПРИГЛАШЕНИЕ ========== -->
+<section id="invitation" class="section-padding">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <!-- ========== ИЗМЕНИТЕ ТЕКСТ ========== -->
-          <p>С любовью, Никита и Дарья 💒</p>
-          <p>Свадьба • 31.07.2026 • ГК ГУЛЛИВЕР </p>
-          <!-- ================================= -->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Мы приглашаем вас на нашу свадьбу!</h3>
+                <p>Торжество состоится <strong>31 июля 2026 года</strong>, и мы будем рады разделить этот день с вами.</p>
+                <div class="share-bar"></div>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
+</section>
 
-  <!-- Подключение скриптов (не трогать) -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/scripts.js"></script>
+<!-- ========== БЛОК "НАША ИСТОРИЯ" ========== -->
+<section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Наша история</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.jpg" class="wp1"></div>
+            <div class="col-md-6">
+                <!-- ========== ИЗМЕНИТЕ ТЕКСТ ИСТОРИИ ========== -->
+                <p>
+                    Здесь напишите вашу историю любви. Как вы познакомились, как развивались ваши отношения,
+                    момент предложения и ваши чувства. Этот текст будет отображаться под фотографией.
+                    Можете написать здесь всё, что хотите рассказать гостям.
+                </p>
+                <!-- ========================================= -->
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.jpg" class="wp2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/IMG_2317.jpg" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/DSD_0214.jpg" class="wp9"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== БЛОК "ТОРЖЕСТВО" ========== -->
+<section class="events section-padding" id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="header">Как пройдёт торжество</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                <div class="wp3">
+                    <p><strong>31 июля 2026</strong></p>
+                    <h5>Торжественная регистрация <span class="time">16:00 - 17:00</span></h5>
+                    <p>Церемония бракосочетания. В этот момент мы станем мужем и женой, и нам очень важно, чтобы вы были рядом.</p>
+                </div>
+                <div class="wp5">
+                    <h5>Фуршет и развлекательная программа <span class="time">17:00 - 23:00</span></h5>
+                    <p>После церемонии вас ждёт праздничный ужин, танцы и музыка. Будем веселиться до утра!</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
+                <div class="wp4">
+                    <p><strong>Важно знать</strong></p>
+                    <h5>Дресс-код</h5>
+                    <p>Пожелания по одежде: если есть особые пожелания — напишите здесь.</p>
+                </div>
+                <div class="wp6">
+                    <h5>Дополнительная информация</h5>
+                    <p>Если у вас есть вопросы, свяжитесь с нами по телефону или в мессенджерах.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row section-padding">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
+                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Подробнее о дресс-коде
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно с дресс-кодом -->
+    <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+                    <h3 class="text-center section-padding">О дресс-коде</h3>
+                    <!-- ========== ИЗМЕНИТЕ ТЕКСТ ДРЕСС-КОДА ========== -->
+                    <p>Мы будем рады видеть вас в нарядной одежде. Для женщин — платья или костюмы, для мужчин — костюмы или смокинги. Главное, чтобы вам было комфортно и радостно!</p>
+                    <!-- ============================================= -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== БЛОК С КАРТОЙ ========== -->
+<section id="map" class="section-padding">
+    <div class="text-center">
+        <h3>Где будет проходить торжество?</h3>
+        <p>ГК "ГУЛЛИВЕР", Пермь, ул. Брызгалова 16</p>
+    </div>
+    <div id="map-canvas"></div>
+    <div id="map-content-wrapper" class="container pointer-events-none">
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                <div class="text-center">
+                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp;Показать информацию
+                    </div>
+                </div>
+                <div id="map-content" class="pointer-events-auto">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>ГК "ГУЛЛИВЕР"</h5>
+                            <p>г. Пермь, ул. Брызгалова, 16</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Контакты организаторов</h5>
+                            <p><i class="fa fa-mobile"></i> <a href="tel://+70000000000">+7 (000) 000-00-00</a><br>
+                            <i class="fa fa-envelope"></i> <a href="mailto:wedding@example.com">wedding@example.com</a></p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-6" style="padding: 5px;">
+                            <a class="btn btn-fill btn-small" href="https://yandex.ru/maps/?text=Пермь, ул. Брызгалова, 16"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Построить маршрут</a>
+                        </div>
+                        <div class="col-md-6" style="padding: 5px;">
+                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Показать карту</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== БЛОК С ПОДАРКАМИ ========== -->
+<section id="wishlist" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Пожелания и подарки</h3>
+                <p>Ваше присутствие — лучший подарок. Но если вы хотите порадовать нас, вот наши пожелания:</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <ul style="list-style: none; padding: 0;">
+                    <li>💰 Денежный конверт — на нашу мечту (путешествие)</li>
+                    <li>📚 Книги с пожеланиями внутри</li>
+                    <li>🍷 Бутылка хорошего вина в нашу коллекцию</li>
+                </ul>
+                <p>Будем рады любому знаку внимания! ❤️</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== БЛОК RSVP (ФОРМА ПОДТВЕРЖДЕНИЯ) ========== -->
+<section class="rsvp text-center" id="rsvp">
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+                    <div class="section-padding">
+                        <h3>Спасибо!</h3>
+                        <p>Мы рады, что вы разделите с нами этот день.</p>
+                        <div id="add-to-cal"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>Подтвердите присутствие</h3>
+                <p>Пожалуйста, ответьте до <strong>1 июля 2026</strong></p>
+                <form id="rsvp-form" class="rsvp-form" action="" method="POST">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input type="text" name="name" class="" placeholder="Ваше имя *" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-envelope"></i><input type="email" name="email" class="" placeholder="Ваш email *" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0" max="10" placeholder="Сколько вас человек?" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-key"></i><input type="text" name="invite_code" id="invite_code" class="" placeholder="Код приглашения (если есть)">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ========== ДОБАВЛЕНО НОВОЕ ПОЛЕ С НАПИТКОМ ========== -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-input-group">
+                                <i class="fa fa-glass"></i>
+                                <select name="drink" class="" style="width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #ccc;">
+                                    <option value="" disabled selected>Выберите предпочитаемый напиток</option>
+                                    <option value="wine">Вино</option>
+                                    <option value="champagne">Шампанское</option>
+                                    <option value="juice">Сок</option>
+                                    <option value="water">Вода</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =================================================== -->
+                    <div class="row">
+                        <div class="col-md-12" id="alert-wrapper"></div>
+                    </div>
+                    <button class="btn-fill rsvp-btn">Подтвердить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ПОДВАЛ ========== -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center content">
+                <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                <p>С любовью, Никита и Дарья 💒</p>
+                <p>Свадьба • 31 июля 2026 • ГК "ГУЛЛИВЕР"</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== ПОДКЛЮЧЕНИЕ СКРИПТОВ (НЕ ТРОГАТЬ) ========== -->
+<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<script src="js/vendor/ouical.js"></script>
+<script src="js/scripts.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46465113-4', 'auto');
+    ga('send', 'pageview');
+</script>
 </body>
 </html>
